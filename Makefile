@@ -1,6 +1,6 @@
 docker/setup:
 	docker build -t docker-1password-env-sample .
-	docker run --name docker-1password-env-sample -d docker-1password-env-sample
+	docker run -v $$PWD:/app --name docker-1password-env-sample -d docker-1password-env-sample
 
 docker/exec: docker_option=-it
 docker/exec: service=docker-1password-env-sample
